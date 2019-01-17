@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Task5 SocialFeed</string>
+    <string name="app_name">Task5 Social</string>
+    <string name="login_et_hint">Login</string>
+    <string name="password_et_hint">Password</string>
+    <string name="login_button_text">Sign In</string>
+    <string name="warning_login">Enter login</string>
+    <string name="warning_password">Enter password</string>
+    <string name="warning_login_and_password">Enter login and password</string>
+    <string name="warning_incorrect">Incorrect login or password</string>
 </resources>
