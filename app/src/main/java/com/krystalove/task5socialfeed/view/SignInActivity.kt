@@ -1,9 +1,10 @@
-package com.krystalove.task5socialfeed
+package com.krystalove.task5socialfeed.view
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
+import com.krystalove.task5socialfeed.R
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
 class SignInActivity : AppCompatActivity() {
@@ -36,7 +37,7 @@ class SignInActivity : AppCompatActivity() {
 
     private fun login() {
         if (tryLogin() == USER_LOGIN) {
-
+            startActivity(Intent(this, ClientActivity::class.java))
         }
     }
 

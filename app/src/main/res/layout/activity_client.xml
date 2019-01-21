@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
+        android:background="@drawable/gradient_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.ClientActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:theme="@style/AppTheme"
+            android:layout_height="wrap_content">
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                app:title="@string/title_feed"
+                app:contentScrim="@color/colorPrimary"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:id="@+id/collapsing_toolbar_image"
+                    android:src="@drawable/ic_launcher_foreground"
+                    android:layout_width="match_parent"
+                    android:scaleType="centerCrop"
+                    android:layout_height="@dimen/collapsing_toolbar_image_size"/>
+            <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    app:popupTheme="@style/AppTheme"
+                    android:layout_height="?attr/actionBarSize">
+
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:id="@+id/client_container">
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme"
+            android:background="?android:attr/windowBackground"
+            android:layout_gravity="bottom"
+            app:menu="@menu/navigation"/>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
