@@ -7,4 +7,10 @@
     <string name="warning_password">Enter password</string>
     <string name="warning_login_and_password">Enter login and password</string>
     <string name="warning_incorrect">Incorrect login or password</string>
+    <string name="title_feed">Feed</string>
+    <string name="title_news">News</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_hint">Title</string>
+    <string name="description_hint">Description</string>
+
 </resources>

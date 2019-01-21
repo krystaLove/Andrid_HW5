@@ -6,10 +6,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/root_layout"
-        tools:context=".SignInActivity">
+        tools:context=".view.SignInActivity">
 
     <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            app:boxBackgroundColor="@android:color/transparent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="60dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -23,6 +24,7 @@
                 style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
                 android:hint="@string/login_et_hint"
                 android:id="@+id/login_field"
+                android:theme="@style/Base.Theme.MaterialComponents.Light"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
@@ -30,18 +32,22 @@
     <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:boxBackgroundColor="@android:color/transparent"
             app:passwordToggleEnabled="true"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="60dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="60dp"
             android:layout_marginStart="60dp"
-            android:id="@+id/textInputLayout2" android:layout_marginBottom="200dp">
+            android:id="@+id/textInputLayout2"
+            android:layout_marginBottom="200dp">
         <com.google.android.material.textfield.TextInputEditText
                 style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
                 android:hint="@string/password_et_hint"
                 android:id="@+id/password_field"
                 android:inputType="textPassword"
+                android:theme="@style/Base.Theme.MaterialComponents.Light"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
