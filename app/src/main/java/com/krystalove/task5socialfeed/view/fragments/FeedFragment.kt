@@ -13,30 +13,31 @@ import com.krystalove.task5socialfeed.R
 import com.krystalove.task5socialfeed.controller.adapters.FeedAdapter
 import com.krystalove.task5socialfeed.model.ItemsData
 
-class NewsFragment : Fragment() {
+class FeedFragment : Fragment() {
 
     companion object {
 
-        fun newInstance(): NewsFragment {
-            return NewsFragment()
+        fun newInstance(): FeedFragment {
+            return FeedFragment()
         }
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_news, container, false)
+        val view = inflater.inflate(R.layout.fragment_feed, container, false)
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.news_recyclerView)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.feed_recyclerView)
+
         recyclerView.apply {
             setHasOptionsMenu(true)
             layoutManager = LinearLayoutManager(activity)
             adapter = FeedAdapter(
                 activity as Activity,
-                ItemsData.news.shuffled()
+                ItemsData.allItems.shuffled()
             )
+
         }
 
         return view
     }
-
 
 }

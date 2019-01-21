@@ -1,5 +1,6 @@
 package com.krystalove.task5socialfeed.view.fragments
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,8 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 import com.krystalove.task5socialfeed.R
-import com.krystalove.task5socialfeed.controller.NotificationAdapter
-import com.krystalove.task5socialfeed.model.Notification
+import com.krystalove.task5socialfeed.controller.adapters.FeedAdapter
+import com.krystalove.task5socialfeed.model.ItemsData
 
 class NotificationFragment : Fragment() {
 
@@ -24,30 +25,17 @@ class NotificationFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_notification, container, false)
 
-        val notificationAdapter = NotificationAdapter(context!!, notifications)
-
         val recyclerView = view.findViewById<RecyclerView>(R.id.notification_recyclerView)
         recyclerView.apply {
             setHasOptionsMenu(true)
             layoutManager = LinearLayoutManager(activity)
-            adapter = notificationAdapter
+            adapter = FeedAdapter(
+                activity as Activity,
+                ItemsData.notification
+            )
 
         }
 
         return view
-    }
-    private val notifications by lazy {
-        listOf(
-            Notification(android.R.drawable.alert_dark_frame, "Title", "Notification"),
-            Notification(android.R.drawable.alert_dark_frame, "Title", "Notification"),
-            Notification(android.R.drawable.alert_dark_frame, "Title", "Notification"),
-            Notification(android.R.drawable.alert_dark_frame, "Title", "Notification"),
-            Notification(android.R.drawable.alert_dark_frame, "Title", "Notification"),
-            Notification(android.R.drawable.alert_dark_frame, "Title", "Notification"),
-            Notification(android.R.drawable.alert_dark_frame, "Title", "Notification"),
-            Notification(android.R.drawable.alert_dark_frame, "Title", "Notification"),
-            Notification(android.R.drawable.alert_dark_frame, "Title", "Notification"),
-            Notification(android.R.drawable.alert_dark_frame, "Title", "Notification")
-        )
     }
 }
