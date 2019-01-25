@@ -24,9 +24,8 @@ class ClientActivity : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener {
-            item ->
-        if(item.itemId == navigation.selectedItemId) return@OnNavigationItemSelectedListener false
+    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        if (item.itemId == navigation.selectedItemId) return@OnNavigationItemSelectedListener false
         setFragment(item.itemId)
         when (item.itemId) {
             R.id.navigation_feed -> {
@@ -53,9 +52,9 @@ class ClientActivity : AppCompatActivity() {
         fragmentTransaction.replace(R.id.client_container, fragment)
         fragmentTransaction.commit()
     }
-    private fun changeCollapsingToolbarImage(id: Int){
-        @DrawableRes val imageId = when(id)
-        {
+
+    private fun changeCollapsingToolbarImage(id: Int) {
+        @DrawableRes val imageId = when (id) {
             R.id.navigation_feed -> R.drawable.feed
             R.id.navigation_news -> R.drawable.news
             else -> R.drawable.notification
@@ -65,5 +64,3 @@ class ClientActivity : AppCompatActivity() {
             .into(collapsing_toolbar_image)
     }
 }
-
-

@@ -1,10 +1,11 @@
 package com.krystalove.task5socialfeed.controller.adapters
 
 import android.app.Activity
-import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
@@ -14,12 +15,7 @@ import kotlinx.android.synthetic.main.notification_item.view.*
 
 class NotificationAdapter(activity: Activity) : AdapterDelegate<List<Any>>() {
 
-    private val mInflater: LayoutInflater
-
-
-    init {
-        this.mInflater = activity.layoutInflater
-    }
+    private val mInflater: LayoutInflater = activity.layoutInflater
 
     override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder =
         NotificationHolder(
@@ -29,7 +25,6 @@ class NotificationAdapter(activity: Activity) : AdapterDelegate<List<Any>>() {
                 false
             )
         )
-
 
     override fun onBindViewHolder(
         items: List<Any>,
@@ -46,14 +41,11 @@ class NotificationAdapter(activity: Activity) : AdapterDelegate<List<Any>>() {
             .into(vh.notificationImage)
     }
 
-    override fun isForViewType(items: List<Any>, position: Int): Boolean = items[position] is Notification
-
+    override fun isForViewType(items: List<Any>, position: Int) = items[position] is Notification
 
     class NotificationHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var notificationImage = itemView.notification_image
-        var notificationTitle = itemView.notification_title
-        var notificationDescription = itemView.notification_description
-
+        val notificationImage: ImageView = itemView.notification_image
+        val notificationTitle: TextView = itemView.notification_title
+        val notificationDescription: TextView = itemView.notification_description
     }
-
 }
