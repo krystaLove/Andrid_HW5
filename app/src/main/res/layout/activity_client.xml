@@ -42,6 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:paddingBottom="@dimen/navigation_menu_size"
             android:id="@+id/client_container">
 
     </FrameLayout>
@@ -49,7 +50,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navigation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/navigation_menu_size"
             android:theme="@style/AppTheme"
             android:background="?android:attr/windowBackground"
             android:layout_gravity="bottom"

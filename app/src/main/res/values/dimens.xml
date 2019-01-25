@@ -9,4 +9,5 @@
     <dimen name="news_card_size">400dp</dimen>
     <dimen name="notification_card_size">175dp</dimen>
     <dimen name="notification_image_size">75dp</dimen>
+    <dimen name="navigation_menu_size">55dp</dimen>
 </resources>
