@@ -1,6 +1,8 @@
 package com.krystalove.task5socialfeed.model
 
 import com.krystalove.task5socialfeed.R
+import com.krystalove.task5socialfeed.model.Feed.News
+import com.krystalove.task5socialfeed.model.Feed.Notification
 
 object ItemsData {
 
@@ -39,7 +41,8 @@ object ItemsData {
             News(
                 R.drawable.news_7,
                 "RTX",
-                "Мод позволяет запустить трассировку в Quake 2 на видеокартах Nvidia"
+                "Мод позволяет запустить трассировку в Quake 2 на видеокартах Nvidia",
+                true
             )
         )
     }

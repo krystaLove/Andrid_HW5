@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout
+
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/container"
+        android:id="@+id/root_layout"
         android:background="@drawable/gradient_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -11,6 +12,8 @@
 
     <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
+            android:id="@+id/app_bar"
+            android:elevation="4dp"
             android:theme="@style/AppTheme"
             android:layout_height="wrap_content">
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -22,7 +25,7 @@
 
             <ImageView
                     android:id="@+id/collapsing_toolbar_image"
-                    android:src="@drawable/ic_launcher_foreground"
+                    android:src="@drawable/feed"
                     android:layout_width="match_parent"
                     android:scaleType="centerCrop"
                     android:layout_height="@dimen/collapsing_toolbar_image_size"/>
@@ -38,17 +41,18 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <FrameLayout
+    <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:paddingBottom="@dimen/navigation_menu_size"
-            android:id="@+id/client_container">
+            android:id="@+id/recyclerView">
 
-    </FrameLayout>
+    </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navigation"
+            android:elevation="4dp"
             android:layout_width="match_parent"
             android:layout_height="@dimen/navigation_menu_size"
             android:theme="@style/AppTheme"

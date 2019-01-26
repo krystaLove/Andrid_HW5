@@ -10,10 +10,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 import com.krystalove.task5socialfeed.R
-import com.krystalove.task5socialfeed.model.Notification
+import com.krystalove.task5socialfeed.model.Feed
+import com.krystalove.task5socialfeed.model.Feed.Notification
 import kotlinx.android.synthetic.main.notification_item.view.*
 
-class NotificationAdapter(activity: Activity) : AdapterDelegate<List<Any>>() {
+class NotificationAdapter(activity: Activity) : AdapterDelegate<List<Feed>>() {
 
     private val mInflater: LayoutInflater = activity.layoutInflater
 
@@ -27,7 +28,7 @@ class NotificationAdapter(activity: Activity) : AdapterDelegate<List<Any>>() {
         )
 
     override fun onBindViewHolder(
-        items: List<Any>,
+        items: List<Feed>,
         position: Int,
         holder: RecyclerView.ViewHolder,
         payloads: MutableList<Any>
@@ -41,8 +42,7 @@ class NotificationAdapter(activity: Activity) : AdapterDelegate<List<Any>>() {
             .into(vh.notificationImage)
     }
 
-    override fun isForViewType(items: List<Any>, position: Int) = items[position] is Notification
-
+    override fun isForViewType(items: List<Feed>, position: Int) = items[position] is Notification
     class NotificationHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val notificationImage: ImageView = itemView.notification_image
         val notificationTitle: TextView = itemView.notification_title

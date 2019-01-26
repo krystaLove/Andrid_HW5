@@ -5,15 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 import com.krystalove.task5socialfeed.R
-import com.krystalove.task5socialfeed.model.News
+import com.krystalove.task5socialfeed.model.Feed
+import com.krystalove.task5socialfeed.model.Feed.News
+
 import kotlinx.android.synthetic.main.news_item.view.*
 
-class NewsAdapter(activity: Activity) : AdapterDelegate<List<Any>>() {
+class NewsAdapter(activity: Activity) : AdapterDelegate<List<Feed>>() {
 
     private val mInflater: LayoutInflater = activity.layoutInflater
 
@@ -27,25 +30,65 @@ class NewsAdapter(activity: Activity) : AdapterDelegate<List<Any>>() {
         )
 
     override fun onBindViewHolder(
-        items: List<Any>,
+        items: List<Feed>,
         position: Int,
         holder: RecyclerView.ViewHolder,
         payloads: MutableList<Any>
     ) {
         val vh = holder as NewsHolder
         val news = items[position] as News
+        vh.likeFrame.setOnClickListener{
+            var heartID = R.drawable.heart_icon_red
+            if(news.isLiked){
+                vh.likeCount.setTextColor(mInflater.context.resources.getColor(R.color.Grey))
+                vh.likeCount.text = ("(${news.likes})")
+                news.likes--
+                heartID = R.drawable.heart_icon
+                news.isLiked = false
+            }else{
+                vh.likeCount.setTextColor(mInflater.context.resources.getColor(R.color.colorAccent))
+                news.likes++
+                vh.likeCount.text = ("(${news.likes})")
+                news.isLiked = true
+            }
+            Glide.with(mInflater.context)
+                .load(heartID)
+                .into(vh.likeIcon)
+        }
         Glide.with(mInflater.context)
             .load(news.logoId)
             .into(vh.newsImage)
         vh.newsDescription.text = news.description
         vh.newsTitle.text = news.title
+        vh.likeCount.text = ("(${news.likes})")
+        var heartID = R.drawable.heart_icon_red
+        if(news.isLiked){
+            vh.likeCount.setTextColor(mInflater.context.resources.getColor(R.color.colorAccent))
+        }
+        else {
+            heartID = R.drawable.heart_icon
+            vh.likeCount.setTextColor(mInflater.context.resources.getColor(R.color.Grey))
+        }
+        Glide.with(mInflater.context)
+            .load(heartID)
+            .into(vh.likeIcon)
     }
 
-    override fun isForViewType(items: List<Any>, position: Int): Boolean = items[position] is News
 
-    class NewsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    override fun isForViewType(items: List<Feed>, position: Int): Boolean = items[position] is News
+
+    class NewsHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
+        override fun onClick(v: View?) {
+            likeFrame.setOnClickListener{
+
+            }
+        }
         val newsImage: ImageView = itemView.news_image
         val newsTitle: TextView = itemView.news_title
         val newsDescription: TextView = itemView.news_description
+        val likeIcon: ImageView = itemView.like_icon
+        var likeCount: TextView = itemView.like_count
+        val likeFrame: RelativeLayout = itemView.like_frame
+
     }
 }
