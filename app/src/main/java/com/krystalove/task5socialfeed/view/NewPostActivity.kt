@@ -20,6 +20,7 @@ class NewPostActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_post)
+        supportActionBar?.hide()
 
         chooseButton.setOnClickListener {
             galleryImageIntent()

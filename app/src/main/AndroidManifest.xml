@@ -10,9 +10,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".view.NewPostActivity">
+        <activity
+                android:screenOrientation="portrait"
+                android:name=".view.NewPostActivity">
         </activity>
-        <activity android:name=".view.SignInActivity">
+        <activity
+                android:screenOrientation="portrait"
+                android:name=".view.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>
@@ -21,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity
+                android:screenOrientation="portrait"
                 android:name=".view.ClientActivity"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
