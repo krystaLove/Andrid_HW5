@@ -34,7 +34,7 @@ class SignInActivity : AppCompatActivity() {
             else if (mPassword.isEmpty()) R.string.warning_password
             else if (mLogin != TestUser.Login || mPassword != TestUser.Password) R.string.warning_incorrect
             else null
-        Snackbar.make(root_layout, message!!, Snackbar.LENGTH_LONG)
+        Snackbar.make(root_layout, message!!, Snackbar.LENGTH_LONG).show()
     }
     private fun login() {
         startActivity(Intent(this, ClientActivity::class.java))
