@@ -49,6 +49,17 @@
             android:id="@+id/recyclerView">
 
     </androidx.recyclerview.widget.RecyclerView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            app:fabSize="normal"
+            android:id="@+id/fab"
+            android:elevation="6dp"
+            android:backgroundTint="@color/colorAccent"
+            android:src="@android:drawable/ic_input_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_anchorGravity="right|bottom"
+            android:layout_marginBottom="71dp"
+            android:layout_marginEnd="16dp"
+            app:layout_anchor="@+id/recyclerView"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navigation"

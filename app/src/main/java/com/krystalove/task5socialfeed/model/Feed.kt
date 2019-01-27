@@ -2,10 +2,11 @@ package com.krystalove.task5socialfeed.model
 
 sealed class Feed {
     data class News(
-        val logoId: Int,
+        val logoId: Int? = null,
         val title: String,
         val description: String,
         var isLiked: Boolean = false,
+        val imageUri: String? = null,
         var likes: Int = (0..1000).random()
     ) : Feed()
 

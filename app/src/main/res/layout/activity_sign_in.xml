@@ -50,7 +50,6 @@
                 android:id="@+id/password_field"
                 android:maxLength="10"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:inputType="textPassword"
                 android:theme="@style/Base.Theme.MaterialComponents.Light"
                 android:layout_width="match_parent"
