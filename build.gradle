@@ -15,6 +15,18 @@ buildscript {
     }
 }
 
+plugins {
+    id "io.gitlab.arturbosch.detekt" version "1.0.0-RC12"
+}
+detekt {
+    toolVersion = "[version]"
+    input = files("src/main/kotlin")
+    filters = ".*/resources/.*,.*/build/.*"
+}
+dependencies {
+    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:[1.0.0-RC12]"
+}
+
 allprojects {
     repositories {
         google()
