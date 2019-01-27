@@ -12,5 +12,7 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_hint">Title</string>
     <string name="description_hint">Description</string>
+    <string name="post_button_text">Post</string>
+    <string name="choose_button_text">Choose image</string>
 
 </resources>
